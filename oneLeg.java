@@ -12,7 +12,7 @@ public class oneLeg {
         //Coordinates of the body -------------------------
         float body_x = 0;
         float body_y = 0;
-        float body_z = 50;
+        float body_z = 70;
 
         //ending point (back right) -----------------------
         float end_x = -50;
@@ -53,7 +53,7 @@ public class oneLeg {
 
         //beta2 -------------------------------------------
         float length_boden = amount_a - length_a;
-        float beta2 = (float) Math.atan(length_boden / body_z);
+        float beta2 = (float) Math.atan(length_boden / (body_z - 10)); //second motor is 1 cm lower than the first one
         float beta2_f = (float) Math.toDegrees(beta2);
 
         //beta --------------------------------------------
