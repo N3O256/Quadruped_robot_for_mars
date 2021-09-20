@@ -24,12 +24,13 @@ void setup() {
 
 void loop() {
   homePos();
+  //forward(1);
 }
 
 void forward(int number){
+  pos1();
+  delay(timeDelay);
   for(int i = 0; i < number; i++){
-    pos1();
-    delay(timeDelay);
     step1();
     delay(timeDelay);
     pos2();
@@ -49,45 +50,45 @@ void forward(int number){
 
 void step4(){
   //front right
-  angle[4] = 235;
-  map_values(4);
-  s.setPWM(4, 0, pwm[4]);
+  angle[12] = 235;
+  map_values(12);
+  s.setPWM(12, 0, pwm[12]);
   delay(200);
   
-  angle[5] = 69;
-  angle[6] = 126;
-  map_values(5);
-  map_values(6);
-  s.setPWM(5, 0, pwm[5]);
-  s.setPWM(6, 0, pwm[6]);
+  angle[13] = 62;
+  angle[14] = 108;
+  map_values(13);
+  map_values(14);
+  s.setPWM(13, 0, pwm[13]);
+  s.setPWM(14, 0, pwm[14]);
   delay(200);
 
-  angle[4] = 199;
-  map_values(4);
-  s.setPWM(4, 0, pwm[4]);
+  angle[12] = 195;
+  map_values(12);
+  s.setPWM(12, 0, pwm[12]);
   delay(200);
 }
 
 void pos4(){
   //back right
-  angle[6] = 144;
-  angle[4] = 195;
-  angle[5] = 96;
+  angle[6] = 119;
+  angle[4] = 177;
+  angle[5] = 55;
 
   //back left
-  angle[14] = 157;
+  angle[14] = 135;
   angle[12] = 199;
-  angle[13] = 83;
+  angle[13] = 77;
 
   //front right
-  angle[2] = 108;
-  angle[0] = 195;
-  angle[1] = 62;
+  angle[2] = 141;
+  angle[0] = 191;
+  angle[1] = 59;
 
   //front left
-  angle[10] = 119;
-  angle[8] = 177;
-  angle[9] = 55;
+  angle[10] = 126;
+  angle[8] = 199;
+  angle[9] = 69;
 
   for(int i = 0; i < 15; i++){
     map_values(i);
@@ -100,45 +101,45 @@ void pos4(){
 
 void step3(){
   //front right
-  angle[12] = 235;
-  map_values(12);
-  s.setPWM(12, 0, pwm[12]);
+  angle[0] = 235;
+  map_values(0);
+  s.setPWM(0, 0, pwm[0]);
   delay(200);
   
-  angle[13] = 69;
-  angle[14] = 126;
-  map_values(13);
-  map_values(14);
-  s.setPWM(13, 0, pwm[13]);
-  s.setPWM(14, 0, pwm[14]);
+  angle[1] = 86;
+  angle[2] = 140;
+  map_values(1);
+  map_values(2);
+  s.setPWM(1, 0, pwm[1]);
+  s.setPWM(2, 0, pwm[2]);
   delay(200);
 
-  angle[12] = 199;
-  map_values(12);
-  s.setPWM(12, 0, pwm[12]);
+  angle[0] = 198;
+  map_values(0);
+  s.setPWM(0, 0, pwm[0]);
   delay(200);
 }
 
 void pos3(){
   //back right
-  angle[6] = 157;
-  angle[4] = 199;
-  angle[5] = 83;
+  angle[6] = 85;
+  angle[4] = 193;
+  angle[5] = 60;
 
   //back left
-  angle[14] = 144;
-  angle[12] = 195;
-  angle[13] = 96;
+  angle[14] = 148;
+  angle[12] = 173;
+  angle[13] = 55;
 
   //front right
-  angle[2] = 119;
-  angle[0] = 177;
-  angle[1] = 55;
+  angle[2] = 118;
+  angle[0] = 197;
+  angle[1] = 64;
 
   //front left
-  angle[10] = 108;
-  angle[8] = 195;
-  angle[9] = 62;
+  angle[10] = 153;
+  angle[8] = 199;
+  angle[9] = 73;
 
   for(int i = 0; i < 15; i++){
     map_values(i);
@@ -151,45 +152,45 @@ void pos3(){
 
 void step2(){
   //front right
-  angle[0] = 230;
-  map_values(0);
-  s.setPWM(0, 0, pwm[0]);
+  angle[4] = 230;
+  map_values(4);
+  s.setPWM(4, 0, pwm[4]);
   delay(200);
   
-  angle[1] = 96;
-  angle[2] = 144;
-  map_values(1);
-  map_values(2);
-  s.setPWM(1, 0, pwm[1]);
-  s.setPWM(2, 0, pwm[2]);
+  angle[5] = 60;
+  angle[6] = 94;
+  map_values(5);
+  map_values(6);
+  s.setPWM(5, 0, pwm[5]);
+  s.setPWM(6, 0, pwm[6]);
   delay(200);
 
-  angle[0] = 195;
-  map_values(0);
-  s.setPWM(0, 0, pwm[0]);
+  angle[4] = 193;
+  map_values(4);
+  s.setPWM(4, 0, pwm[4]);
   delay(200);
 }
 
 void pos2(){
   //back right
-  angle[6] = 108;
-  angle[4] = 195;
-  angle[5] = 62;
+  angle[6] = 126;
+  angle[4] = 199;
+  angle[5] = 69;
 
   //back left
-  angle[14] = 119;
-  angle[12] = 177;
-  angle[13] = 55;
+  angle[14] = 141;
+  angle[12] = 191;
+  angle[13] = 59;
 
   //front right
-  angle[2] = 162;
-  angle[0] = 199;
-  angle[1] = 69;
+  angle[2] = 109;
+  angle[0] = 194;
+  angle[1] = 62;
 
   //front left
-  angle[10] = 141;
-  angle[8] = 191;
-  angle[9] = 59;
+  angle[10] = 119;
+  angle[8] = 177;
+  angle[9] = 55;
 
   for(int i = 0; i < 15; i++){
     map_values(i);
