@@ -15,7 +15,7 @@ public class oneLeg {
         float body_z = 70;
 
         //ending point (back right) -----------------------
-        float end_x = -55;
+        float end_x = -25;
         float end_y = -75;
         float end_z = 0;
 
