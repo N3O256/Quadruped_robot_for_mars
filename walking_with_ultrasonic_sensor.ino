@@ -21,9 +21,10 @@ int echoPin = 2;
 
 float duration_us1, duration_us2, distance_cm, distance_down, distance_up;
 float duration[10];
-float left_side, right_side
+float left_side, right_side;
+int number;
 
-boolean side; //true = left; false = right
+boolean side = true; //true = left, false = right
 boolean down = true;
 
 void setup() {
@@ -57,7 +58,7 @@ void loop() {
     distance_up = getDistance();
     Serial.print("distance_up: ");
     Serial.println(distance_up);
-    if(distance_up < 40){
+    if(distance_up < 47){
       backward(1);
       Serial.println("backward");
       delay(100);
@@ -80,19 +81,24 @@ void getSide(){
   setUltrasonicSensor(90, 65);
   delay(200);
   left_side = getDistance();
+  Serial.print("left_side: ");
+  Serial.println(left_side);
   delay(100);
   setUltrasonicSensor(90, -80);
   delay(200);
   right_side = getDistance();
+  Serial.print("right_side: ");
+  Serial.println(right_side);
   delay(100);
-  if(right_side > left_side){
+  if(right_side < left_side){
     side = true; //turn right
   }else{
     side = false; //turn left
-  }  
+  }
 }
 
 float getDistance(){
+  delay(300);
   for(int i = 0; i < 10; i++){
     // generate 10-microsecond pulse to TRIG pin
     digitalWrite(trigPin, HIGH);
@@ -102,12 +108,17 @@ float getDistance(){
     duration[i] = pulseIn(echoPin, HIGH);
   }
 
+  number = 0;
+
   for(int i = 0; i < 10; i++){
-    duration_us1 +=duration[i];
+    if((duration[i] < 29400) || (duration[i] > 0)){
+      duration_us1 +=duration[i];
+      number++;
+    }
   }
   
   //create the middle value
-  duration_us2 = duration_us1 / 10;
+  duration_us2 = duration_us1 / number;
 
   // calculate the distance
   distance_cm = 0.017 * duration_us2;
@@ -228,7 +239,6 @@ void step1sr(){
   s.setPWM(0, 0, pwm[0]);
   delay(200);
 }
-
 
 
 //----------------right side------------
